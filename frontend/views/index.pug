@@ -12,9 +12,9 @@
         |#{contentJoke}
         hr#hr
 
-    form(action='', method='post')
-        input#like(type='submit', name='like', value='This is Funny!')
-        input#dislike(type='submit', name='dislike', value='This is not funny.')
+    form
+        input#like(type='submit', name='like', value='This is Funny!', onclick="sendCookieLike()")
+        input#dislike(type='submit', name='dislike', value='This is not funny.', onclick="sendCookieDislike()")
     hr(style='margin-top: 8%')
   div
     p(style='text-align:center')
@@ -23,9 +23,13 @@
     p(style='text-align:center; color: #484848')
       | 2022
 script.
-  function sendCookie(value){
-    document.cookie="track=" + value;
+  function sendCookieLike(){
+    document.cookie = "Track=Like"
   }
+  function sendCookieDislike(){
+    document.cookie = "Track=Dislike"
+  }
+
 
 style.
   #body {

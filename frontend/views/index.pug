@@ -9,15 +9,12 @@
   div
     #content
       p#par
-        | A child asked his father, &quot;How were people born?&quot; So his father said, &quot;Adam and Eve made babies, then their babies became adults and made babies, and so on.&quot;
-        | The child then went to his mother, asked her the same question and she told him, &quot;We were monkeys then we evolved to become like we are now.&quot;
-        | The child ran back to his father and said, &quot;You lied to me!&quot; His father replied, &quot;No, your mom was talking about her side of the family.&quot;
+        |#{contentJoke}
         hr#hr
-    #outer
-      .inner
-        button.msgBtn(type='submit', onclick='return false', style='background-color:#29b363; color: white; width: 250%; height: 5%; font-size: 100%; border: none;') This is Funny!
-      .inner
-        button.msgBtn2(type='submit', onclick='myFunction()', style='background-color:#2c7edb; color: white; width: 220%; height: 5%; font-size: 100%; border: none;') This is not funny
+
+    form(action='', method='post')
+        input#like(type='submit', name='like', value='This is Funny!')
+        input#dislike(type='submit', name='dislike', value='This is not funny.')
     hr(style='margin-top: 8%')
   div
     p(style='text-align:center')
@@ -25,6 +22,10 @@
       br
     p(style='text-align:center; color: #484848')
       | 2022
+script.
+  function sendCookie(value){
+    document.cookie="track=" + value;
+  }
 
 style.
   #body {
@@ -51,13 +52,22 @@ style.
   margin: 8% 5% 8% 5%;
   background-color: #ccc;
   }
-  #outer {
-  width: 100%;
-  text-align: center;
+  #like {
+      margin-left:30%;
+      background-color: #2c7edb;
+      color: white;
+      font-family: calibri;
+      width: 20%;
+      height: 4%;
+      font-size:130%;
   }
-  .inner {
-  text-align: center;
-  display: inline-block;
-  margin-right: 15%;
-  margin-left: 5%
+  #dislike{
+      margin-left: 5%;
+      background-color: #29b363;
+      color:white;
+      font-family: calibri;
+      width: 20%;
+      height: 4%;
+      font-size:130%;
   }
+

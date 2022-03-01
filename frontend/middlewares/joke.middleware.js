@@ -26,7 +26,6 @@ module.exports.checkCookie = function(req, res, next){
             res.render("index", {  // render page index
                 contentJoke:"That's all the jokes for today! Come back another day!"
             })
-
     }
     else if(req.cookies.Track == "Dislike"){ // if user vote this is not funny
         jokeModel[indexJoke(jokeModel)].vote = req.cookies.Track 

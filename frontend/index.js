@@ -20,9 +20,6 @@ app.set('view engine', 'pug')
 app.set('views', "./frontend/views")
 
 app.use("/", jokeRouter)
-// app.get('/', function(req, res){
-//     res.send("/")
-// })
 
 app.listen(port,() =>{
     console.log("Server is listening on port 3000...")
